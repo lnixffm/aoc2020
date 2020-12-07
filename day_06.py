@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
 import sys
-# day 5: find the right place in the plane
+# day 6: questions
 
 # Read Data
 input_lst = []
@@ -17,7 +17,6 @@ for line in lines:
     else:
         line = line.replace('\n','')
         group_list.append(line)
-
 
 def first_star():
     questions_yes_count = []
@@ -64,11 +63,9 @@ def second_star():
     print("Second Star")
     print("Total Yes: {}".format(total_yes))
 
-            
-
 
 # first star
 first_star()
 
-#second star
+#second star (3125)
 second_star()
