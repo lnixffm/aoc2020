@@ -1,6 +1,5 @@
 #!/usr/bin/python
 
-import sys
 # day 6: questions
 
 # Read Data
@@ -36,36 +35,28 @@ def first_star():
     print("First Star")
     print("Total Yes: {}".format(total_yes))
 
-
 def second_star():
-    questions_yes_count = []
-    for group in input_lst:
-        #print group
-        question_yes_list = []
-        group_answer_yes_count_list = 0
-        set_answer  = []
-        for each_answer in group[0]:
-            set_answer.append(each_answer)
-
-        for person in group:
-            #print person
-            for each_answer in set_answer:
-                #print set_answer
-                if not each_answer in person:
-                    set_answer.remove(each_answer)
-
-        #print set_answer
-        questions_yes_count.append(len(set_answer))
 
     total_yes = 0
-    for groupanswer in questions_yes_count:
-        total_yes = total_yes + groupanswer
+
+    for group in input_lst: 
+        group_dic = {}
+        for person in group:
+            for each_answer in person:
+                if each_answer in group_dic:
+                    group_dic[each_answer] += 1
+                else:
+                    group_dic[each_answer] = 1
+       
+        for e_answer in group_dic:
+            if group_dic.get(e_answer) == len(group):
+                total_yes += 1
     print("Second Star")
     print("Total Yes: {}".format(total_yes))
-
+ 
 
 # first star
 first_star()
 
-#second star (3125)
+#second star
 second_star()
