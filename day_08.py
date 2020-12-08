@@ -76,6 +76,7 @@ def second_star():
         if input_list == repaired_lst:
             return
 
+
 # first star
 first_star()
 print("First Star")
