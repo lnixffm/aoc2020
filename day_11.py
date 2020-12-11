@@ -1,7 +1,7 @@
 #!/usr/bin/python
-import numpy as np
-import matplotlib.pyplot as plt
-import sys
+#import numpy as np
+#import matplotlib.pyplot as plt
+
 
 # day 11: seats on ship
 
@@ -17,40 +17,9 @@ for line in lines:
         line_lst.append(seat)
     input_list.append(line_lst)
     
-seat_matrix = np.array(input_list[0])
-for line in input_list[1::]:
-    seat_matrix = np.vstack([seat_matrix, line])
-
-
-def take_a_seat(seat_matrix):
-    #print(seat_matrix[, 0])
-    #sys.exit(1)
-    line_index = 0
-    for line in seat_matrix:
-        seat_index = 0
-        for seat in line:
-            print seat_matrix[1:4]
-            sys.exit(1)
-            seat_index += 1
-        line_index +=1
-    return seat_matrix
-
-def first_stare(seat_matrix):
-    while True:
-        if np.array_equal(seat_matrix,take_a_seat(seat_matrix)):
-            break
-        else:
-            seat_list = take_a_seat(seat_list)
-    count = 0
-    for l in seat_matrix:
-        for s in l:
-            if s == "#":
-                count += 1
-    return count
-
-
-
-
+#seat_matrix = np.array(input_list[0])
+#for line in input_list[1::]:
+#    seat_matrix = np.vstack([seat_matrix, line])
 
 
 def place_star1(input_list):
@@ -109,17 +78,6 @@ def place_star1(input_list):
     return seat_list
 
 
-def check_seat2(matrix,position,direction):
-    while True:
-        if position > 0:
-            if line[position-1] == "#":
-                return 1
-            if line[position-1] == "L":
-                return 0
-            position -= 1
-        else:
-            return 0
-
 def check_seat(matrix,line_index,seat_index,direction):
     while True:
         if direction == "left":
@@ -148,8 +106,6 @@ def check_seat(matrix,line_index,seat_index,direction):
             return 0
         seat_index += seat_indicator
         line_index += line_indicator
-
-
 
 
 def place_star2(input_list):
@@ -289,10 +245,6 @@ def second_star():
             if s == "#":
                 count += 1
     return count
-
-#cvalues = [20.1, 20.8, 21.9, 22.5, 22.7, 21.8, 21.3, 20.9, 20.1]
-#plt.plot(cvalues)
-#plt.show()
 
 # first star
 print("First Star")
