@@ -22,7 +22,6 @@ def calculate_manhattan_distance(n,s,e,w):
     manhattan_distance = (ns + we)
     return manhattan_distance
 
-
 def first_star(facing,instruction_list):
     n = 0
     e = 0
